@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "102707756666",
+    "firebase_url": "https://allapps-227d2.firebaseio.com",
+    "project_id": "allapps-227d2",
+    "storage_bucket": "allapps-227d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102707756666:android:e729595d8f1af5ec",
+        "android_client_info": {
+          "package_name": "com.injuryrecovery.hi.abaykunanbaevblackwords"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102707756666-ucimt0c2950pegs29s4nkm4vk7fjdsqs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.injuryrecovery.hi.abaykunanbaevblackwords",
+            "certificate_hash": "e5e87da777f12d59e33320bb18a903d5dd86ce8b"
+          }
+        },
+        {
+          "client_id": "102707756666-dliqgkcffq8598hme41rqbqs36n1ggks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIuqor3jerJoX4z9RPd0hV1oad4zl9Vd8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102707756666-dliqgkcffq8598hme41rqbqs36n1ggks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Abai Kunanbaev “Book of words”</string>
+    <string name="title_home" translatable="false">Қазақша</string>
+    <string name="title_dashboard" translatable="false">На Русском</string>
+    <string name="title_notifications" translatable="false">In English</string>
+
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3941279894802307/5085621325</string>
+</resources>
