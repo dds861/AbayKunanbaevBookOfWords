@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="english_num">english_num</string>
+    <string name="english_text">english_text</string>
+    <string name="kazakh_num">kazakh_num</string>
+    <string name="kazakh_text">kazakh_text</string>
+    <string name="russian_num">russian_num</string>
+    <string name="russian_text">russian_text</string>
+</resources>

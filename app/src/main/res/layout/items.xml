@@ -6,11 +6,12 @@
 
     <TextView
         android:id="@+id/text1"
+        style="@style/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        style="@style/text"
 
-        android:padding="12dp" />
+        android:padding="12dp"
+        android:text="ghjh" />
 
 </LinearLayout>
