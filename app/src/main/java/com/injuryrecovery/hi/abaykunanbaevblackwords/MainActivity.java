@@ -26,10 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private String russian = "";
     private String english = "";
 
-    //реклама
-    private static final String TAG = "MainActivity";
-    private AdView mAdView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,20 +37,20 @@ public class MainActivity extends AppCompatActivity {
         Log.i("autolog", "english: " + english);
 
         //реклама
-        mAdView = (AdView) findViewById(R.id.adView);
+        AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        listView = (ListView) findViewById(R.id.listview_words);
+        listView = findViewById(R.id.listview_words);
         listView.setAdapter(getAdapter(kazakh));
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         clickedItems(kazakh);
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -105,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             items.add(new Product(listItems.get(i)));
         }
 
-        MyAdapter myAdapter = new MyAdapter(getApplicationContext(), items);
+        MyAdapter myAdapter = new MyAdapter(getApplicationContext(),items);
         databaseAccess.close();
 
         return myAdapter;

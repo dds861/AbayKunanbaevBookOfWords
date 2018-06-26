@@ -4,9 +4,9 @@ package com.injuryrecovery.hi.abaykunanbaevblackwords;
  * Created by dds86 on 14.09.2017.
  */
 
-public class Product {
+class Product {
 
-    String textView1;
+    private String textView1;
 
     public String getTextView1() {return textView1;}
 

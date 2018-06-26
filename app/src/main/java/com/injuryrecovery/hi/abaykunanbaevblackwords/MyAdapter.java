@@ -15,12 +15,11 @@ import java.util.List;
  * Created by dds86 on 14.09.2017.
  */
 
-public class MyAdapter extends ArrayAdapter<Product> {
-    private List<Product> objects;
+class MyAdapter extends ArrayAdapter<Product> {
 
-    public MyAdapter(@NonNull Context context, @NonNull List<Product> objects) {
-        super(context, 0, objects);
-        this.objects = objects;
+
+    public MyAdapter(@NonNull Context context, List<Product> items) {
+        super(context, 0,items);
     }
 
     @NonNull
@@ -31,9 +30,8 @@ public class MyAdapter extends ArrayAdapter<Product> {
 
         Product product = getItem(position);
 
-        TextView textView1 = (TextView) view.findViewById(R.id.text1);
-        textView1.setText(product.getTextView1());
-
+        TextView textView1 = view.findViewById(R.id.text1);
+            textView1.setText(product.getTextView1());
         return view;
     }
 }

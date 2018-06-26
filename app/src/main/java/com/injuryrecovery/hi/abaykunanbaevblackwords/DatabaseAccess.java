@@ -1,5 +1,6 @@
 package com.injuryrecovery.hi.abaykunanbaevblackwords;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,11 +11,12 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressLint("Registered")
 public class DatabaseAccess extends AppCompatActivity {
-    private SQLiteOpenHelper openHelper;
+    private final SQLiteOpenHelper openHelper;
     private SQLiteDatabase database;
     private static DatabaseAccess instance;
-    private Context context;
+    private final Context context;
 
     public DatabaseAccess(Context context) {
         this.openHelper = new DatabaseOpenHelper(context);
@@ -42,7 +44,7 @@ public class DatabaseAccess extends AppCompatActivity {
     public List<String> getItems(String language) {
         List<String> list = new ArrayList<>();
 
-        String sqlQueryText = "";
+        String sqlQueryText;
         switch (language) {
             case "kazakh":
                 sqlQueryText = "SELECT kazakh_num FROM abay";
