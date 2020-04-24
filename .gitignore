@@ -7,3 +7,7 @@
 /build
 /captures
 .externalNativeBuild
+
+app/apikey.properties
+
+app/release/app-release.aab

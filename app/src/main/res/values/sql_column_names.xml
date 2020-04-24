@@ -6,4 +6,6 @@
     <string name="kazakh_text" translatable="false">kazakh_text</string>
     <string name="russian_num" translatable="false">russian_num</string>
     <string name="russian_text" translatable="false">russian_text</string>
+    <string name="portuguese_num" translatable="false">portuguese_num</string>
+    <string name="portuguese_text" translatable="false">portuguese_text</string>
 </resources>

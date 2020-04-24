@@ -32,6 +32,7 @@ public class DatabaseAccess extends AppCompatActivity {
     }
 
     public void open() {
+        context.deleteDatabase("abay.db");
         this.database = openHelper.getWritableDatabase();
     }
 
@@ -47,16 +48,19 @@ public class DatabaseAccess extends AppCompatActivity {
         String sqlQueryText;
         switch (language) {
             case "kazakh":
-                sqlQueryText = "SELECT kazakh_num FROM abay";
+                sqlQueryText = "SELECT kazakh_num FROM Book1";
                 break;
             case "russian":
-                sqlQueryText = "SELECT russian_num FROM abay";
+                sqlQueryText = "SELECT russian_num FROM Book1";
                 break;
             case "english":
-                sqlQueryText = "SELECT english_num FROM abay";
+                sqlQueryText = "SELECT english_num FROM Book1";
+                break;
+            case "portuguese":
+                sqlQueryText = "SELECT portuguese_num FROM Book1";
                 break;
             default:
-                sqlQueryText = "SELECT kazakh_num FROM abay";
+                sqlQueryText = "SELECT kazakh_num FROM Book1";
                 break;
         }
 
@@ -86,9 +90,12 @@ public class DatabaseAccess extends AppCompatActivity {
             case "english":
                 columnName = context.getResources().getString(R.string.english_text);
                 break;
+            case "portuguese":
+                columnName = context.getResources().getString(R.string.portuguese_text);
+                break;
         }
 
-        String sqlQueryText = "SELECT " + columnName + " FROM abay";
+        String sqlQueryText = "SELECT " + columnName + " FROM Book1";
         Log.i("autolog", "sqlQueryText: " + sqlQueryText);
 
 

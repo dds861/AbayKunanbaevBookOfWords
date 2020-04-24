@@ -3,4 +3,5 @@
     <string name="english" translatable="false">english</string>
     <string name="kazakh" translatable="false">kazakh</string>
     <string name="russian" translatable="false">russian</string>
+    <string name="portuguese" translatable="false">portuguese</string>
 </resources>

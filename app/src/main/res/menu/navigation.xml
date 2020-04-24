@@ -3,18 +3,22 @@
 
     <item
         android:id="@+id/navigation_qazaqsha"
-        android:icon="@drawable/ic_hand"
-        android:title="@string/title_home" />
+        android:icon="@drawable/ic_language_black_24dp"
+        android:title="@string/title_kazakh" />
 
     <item
         android:id="@+id/navigation_russian"
-        android:icon="@drawable/ic_pointer"
-
-        android:title="@string/title_dashboard" />
+        android:icon="@drawable/ic_language_black_24dp"
+        android:title="@string/title_russian" />
 
     <item
         android:id="@+id/navigation_english"
-        android:icon="@drawable/ic_pointer2"
-        android:title="@string/title_notifications" />
+        android:icon="@drawable/ic_language_black_24dp"
+        android:title="@string/title_english" />
+
+    <item
+        android:id="@+id/navigation_portuguese"
+        android:icon="@drawable/ic_language_black_24dp"
+        android:title="@string/title_portuguese" />
 
 </menu>

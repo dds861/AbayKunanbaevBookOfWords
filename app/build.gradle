@@ -1,15 +1,21 @@
 apply plugin: 'com.android.application'
 
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.injuryrecovery.hi.abaykunanbaevblackwords"
         minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 4
-        versionName "1.2"
+        targetSdkVersion 29
+        versionCode 8
+        versionName "1.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        buildConfigField("String", "CONSUMER_KEY", apikeyProperties['CONSUMER_KEY'])
     }
     buildTypes {
         release {

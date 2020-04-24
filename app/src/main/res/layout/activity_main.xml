@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,12 +9,50 @@
     android:background="@drawable/background_image"
     tools:context="com.injuryrecovery.hi.abaykunanbaevblackwords.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimaryDark"
+
+        android:fitsSystemWindows="true"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:titleTextColor="@color/primary_light" />
+
+    <TextView
+        android:id="@+id/tvLegalText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/legal_text"
+        android:visibility="gone"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@id/toolbar_actionbar"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@id/tvLegalText" />
+
     <FrameLayout
         android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_above="@id/adView"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        ads:layout_constraintBottom_toTopOf="@id/adView"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@id/viewDivider">
 
         <ListView
             android:id="@+id/listview_words"
@@ -24,20 +62,27 @@
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/navigation" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/navigation"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id" />
-</RelativeLayout>
+        ads:adUnitId="@string/banner_ad_unit_id"
+        ads:layout_constraintBottom_toTopOf="@id/navigation"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

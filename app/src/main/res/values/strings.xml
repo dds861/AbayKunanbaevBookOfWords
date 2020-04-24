@@ -1,10 +1,18 @@
 <resources>
-    <string name="app_name">Abay Kunanbayev “Book of words”</string>
-    <string name="title_home" translatable="false">Қазақша</string>
-    <string name="title_dashboard" translatable="false">На Русском</string>
-    <string name="title_notifications" translatable="false">In English</string>
+    <string name="app_name">Abai Qunanbayuly “Book of words”</string>
+    <string name="title_kazakh" translatable="false">Қазақша</string>
+    <string name="title_russian" translatable="false">На Русском</string>
+    <string name="title_english" translatable="false">English</string>
+    <string name="title_portuguese" translatable="false">Portugues</string>
+    <string name="legal_text" translatable="false">©Copyright 2020\nEmbaixada da República do Cazaquistão no Brasil</string>
 
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3941279894802307/5085621325</string>
+
+
+    <string name="app_name_kazakh" translatable="false">Абайдың қара сөздері</string>
+    <string name="app_name_russian" translatable="false">Абай Кунанбаев \"Слова Назидания\"</string>
+    <string name="app_name_english" translatable="false">Abai Qunanbayuly “Book of words”</string>
+    <string name="app_name_portuguese" translatable="false">Abai Qunanbayuly “O Livro das Palavras”</string>
 
     <!--test Google Banner ID-->
     <!--<string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
