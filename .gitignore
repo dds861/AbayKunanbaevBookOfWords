@@ -11,3 +11,5 @@
 app/apikey.properties
 
 app/release/app-release.aab
+
+.idea/
