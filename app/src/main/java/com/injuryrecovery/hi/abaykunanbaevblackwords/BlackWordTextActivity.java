@@ -2,7 +2,6 @@ package com.injuryrecovery.hi.abaykunanbaevblackwords;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,12 +14,12 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import java.util.List;
 
-public class MainActivity2 extends YouTubeBaseActivity {
+public class BlackWordTextActivity extends YouTubeBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_black_word_text);
 
 
         //реклама
@@ -30,13 +29,12 @@ public class MainActivity2 extends YouTubeBaseActivity {
 
         Intent mIntent = getIntent();
         String language = mIntent.getStringExtra("language");
-        Log.i("autolog", "language: " + language);
         final int position = mIntent.getIntExtra("position", 0);
 
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
 
-        List<String> list_qazaqsha_counter = databaseAccess.getBlackWord(language);
+        List<String> list_qazaqsha_counter = databaseAccess.getTextBlackWords(language);
         databaseAccess.close();
         TextView mTvText = findViewById(R.id.tvText);
 

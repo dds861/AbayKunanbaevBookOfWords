@@ -5,8 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,29 +43,9 @@ public class DatabaseAccess extends AppCompatActivity {
         }
     }
 
-    public List<String> getItems(String language) {
+    public List<String> getTextBlackWords(String tableName) {
         List<String> list = new ArrayList<>();
-
-        String sqlQueryText;
-        switch (language) {
-            case "kazakh":
-                sqlQueryText = "SELECT kazakh_num FROM Book1";
-                break;
-            case "russian":
-                sqlQueryText = "SELECT russian_num FROM Book1";
-                break;
-            case "english":
-                sqlQueryText = "SELECT english_num FROM Book1";
-                break;
-            case "portuguese":
-                sqlQueryText = "SELECT portuguese_num FROM Book1";
-                break;
-            default:
-                sqlQueryText = "SELECT kazakh_num FROM Book1";
-                break;
-        }
-
-
+        String sqlQueryText = "SELECT text FROM " + tableName;
         Cursor cursor = database.rawQuery(sqlQueryText, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -75,29 +56,8 @@ public class DatabaseAccess extends AppCompatActivity {
         return list;
     }
 
-    public List<String> getBlackWord(String language) {
-
-
-        String columnName = "";
-        switch (language) {
-
-            case "kazakh":
-                columnName = context.getResources().getString(R.string.kazakh_text);
-                break;
-            case "russian":
-                columnName = context.getResources().getString(R.string.russian_text);
-                break;
-            case "english":
-                columnName = context.getResources().getString(R.string.english_text);
-                break;
-            case "portuguese":
-                columnName = context.getResources().getString(R.string.portuguese_text);
-                break;
-        }
-
-        String sqlQueryText = "SELECT " + columnName + " FROM Book1";
-        Log.i("autolog", "sqlQueryText: " + sqlQueryText);
-
+    public List<String> getNumBlackWord(String tableName) {
+        String sqlQueryText = "SELECT num FROM " + tableName;
 
 
         Cursor cursor = database.rawQuery(sqlQueryText, null);
@@ -110,6 +70,38 @@ public class DatabaseAccess extends AppCompatActivity {
         }
         cursor.close();
         return list;
+    }
+
+    public List<String> getLanguages(String tableName) {
+        String sqlQueryText = "SELECT text FROM " + tableName;
+
+
+        Cursor cursor = database.rawQuery(sqlQueryText, null);
+
+        List<String> list = new ArrayList<>();
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            list.add(cursor.getString(0));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
+
+    public String getLanguageByPosition(String position) {
+
+        String sqlQueryText = "SELECT text FROM languages WHERE num = " + position;
+        Log.i("autolog", "sqlQueryText: " + sqlQueryText);
+        Cursor cursor = database.rawQuery(sqlQueryText, null);
+        cursor.moveToFirst();
+        List<String> list = new ArrayList<>();
+        while (!cursor.isAfterLast()) {
+            list.add(cursor.getString(0));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list.get(0);
+
     }
 
 

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_image"
-    tools:context="com.injuryrecovery.hi.abaykunanbaevblackwords.MainActivity">
+    tools:context="com.injuryrecovery.hi.abaykunanbaevblackwords.BlackWordNumsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_actionbar"

@@ -2,10 +2,6 @@ package com.injuryrecovery.hi.abaykunanbaevblackwords;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,13 +10,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class BlackWordNumsActivity extends AppCompatActivity {
 
     private ListView listView;
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_black_word_num);
 
 
         legaText = findViewById(R.id.tvLegalText);
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         russian = getResources().getString(R.string.russian);
         english = getResources().getString(R.string.english);
         portuguese = getResources().getString(R.string.portuguese);
-        Log.i("autolog", "english: " + english);
 
         //реклама
         AdView mAdView = findViewById(R.id.adView);
@@ -60,7 +60,19 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        clickedItems(kazakh);
+        Intent mIntent = getIntent();
+        String language = mIntent.getStringExtra("language");
+        int position = mIntent.getIntExtra("position", 0);
+        Log.i("autolog", "position: " + position);
+
+        String selectedLanguage = getLanguageByPosition(String.valueOf(position+1));
+        clickedItems(selectedLanguage);
+    }
+
+    private String getLanguageByPosition(String position) {
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+        databaseAccess.open();
+        return databaseAccess.getLanguageByPosition(position);
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -100,11 +112,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, String.valueOf(position + 1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(BlackWordNumsActivity.this, String.valueOf(position + 1), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                Intent intent = new Intent(getApplicationContext(), BlackWordTextActivity.class);
                 intent.putExtra("language", language);
-                Log.i("autolog", "language intent: " + language);
                 intent.putExtra("position", position);
                 startActivity(intent);
             }
@@ -118,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
 
-        List<String> listItems = databaseAccess.getItems(language);
+        List<String> listItems = databaseAccess.getNumBlackWord(language);
         List<Product> items = new ArrayList<>();
 
         for (int i = 0; i < listItems.size(); i++) {
