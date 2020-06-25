@@ -5,5 +5,4 @@ public class PlayerConfig {
     }
 
     public static final String API_KEY = BuildConfig.CONSUMER_KEY;
-    ;
 }
