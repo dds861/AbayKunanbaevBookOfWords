@@ -1,0 +1,44 @@
+<resources>
+
+    <!--HOME-->
+    <string name="home_loading_title">Loading…</string>
+    <string name="home_toolbar_title">Справочник ЦОНов Казахстана</string>
+
+    <!--DIALOG-->
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_accept">Accept</string>
+    <string name="dialog_no">No</string>
+
+
+    <string name="app_name">ЦОНы Справочник</string>
+    <string name="application_name">ЦОНы Справочник</string>
+    <string name="hint_search">Поиск</string>
+    <!--real banner id-->
+        <string name="admob_ad_app_id" translatable="false">ca-app-pub-3941279894802307~8087898964</string>
+        <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3941279894802307/1793953353</string>
+        <string name="interstitial_ad_unit_id">ca-app-pub-3941279894802307/1577596666</string>
+    <!--test banner id-->
+<!--    <string name="admob_ad_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>-->
+<!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+<!--    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>-->
+
+    <string name="share_using">Поделиться</string>
+    <string name="TextCopied">Скопировано</string>
+    <string name="app_label">label</string>
+    <string name="search_hint">Фильтр</string>
+    <string name="search_title">Поиск</string>
+    <string name="appwidget_text">ЦОНы Справочник</string>
+    <string name="add_widget">Add widget</string>
+
+    <string name="title_activity_main3">Main3Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Daniyar Nurgaliyev Apps</string>
+    <string name="nav_header_subtitle_email">adeveloper861@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="telegramPackage">org.telegram.messenger</string>
+    <string name="telegramDirectLink">tg://resolve?domain=maqal1</string>
+    <string name="telegramWebLink">https://t.me/maqal1</string>
+
+</resources>
