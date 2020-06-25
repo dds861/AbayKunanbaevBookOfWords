@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion ema.compileSdk
+    buildToolsVersion ema.buildTools
+
+    // Values from keystore.properties file
+    def keystorePropertiesFile = rootProject.file("data/keystore.properties")
+    def keystoreProperties = new Properties()
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+    defaultConfig {
+        minSdkVersion ema.minSdk
+        targetSdkVersion ema.targetSdk
+        versionCode ema.versionCode
+        versionName ema.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    flavorDimensions 'environment'
+
+    productFlavors {
+        mock {
+            dimension 'environment'
+            buildConfigField 'String', 'DB_NAME', '"makal"'
+            buildConfigField 'String', 'URL_LDA', '"https://www.site.com"'
+            buildConfigField "String", "DB_SECRET_KEY", keystoreProperties["DB_SECRET_KEY"]
+        }
+
+        pro {
+            dimension 'environment'
+            buildConfigField 'String', 'DB_NAME', '"makal"'
+            buildConfigField 'String', 'URL_LDA', '"https://www.site.com"'
+            buildConfigField "String", "DB_SECRET_KEY", keystoreProperties["DB_SECRET_KEY"]
+        }
+
+    }
+}
+
+dependencies {
+    implementation project(path: ':domain')
+    implementation project(path: ':common')
+
+    implementation dataDependencies.kotlin
+    implementation dataDependencies.coroutines
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.converter_gson
+    implementation dataDependencies.room
+    implementation dataDependencies.roomKt
+    kapt dataDependencies.roomCompiler
+    implementation dataDependencies.sqlcipher
+    implementation dataDependencies.androidxSqlite
+}
