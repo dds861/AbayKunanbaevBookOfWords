@@ -17,5 +17,27 @@
     <!--test Google Banner ID-->
     <!--<string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
 
+<!--    &lt;!&ndash;HOME&ndash;&gt;-->
+<!--    <string name="home_loading_title">Loading…</string>-->
+<!--    <string name="home_toolbar_title">Справочник ЦОНов Казахстана</string>-->
+
+<!--    &lt;!&ndash;DIALOG&ndash;&gt;-->
+<!--    <string name="dialog_yes">Yes</string>-->
+<!--    <string name="dialog_accept">Accept</string>-->
+<!--    <string name="dialog_no">No</string>-->
+
+
+<!--    <string name="app_name">ЦОНы Справочник</string>-->
+<!--    <string name="application_name">ЦОНы Справочник</string>-->
+<!--    <string name="hint_search">Поиск</string>-->
+<!--    &lt;!&ndash;real banner id&ndash;&gt;-->
+<!--    <string name="admob_ad_app_id" translatable="false">ca-app-pub-3941279894802307~8087898964</string>-->
+<!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3941279894802307/1793953353</string>-->
+<!--    <string name="interstitial_ad_unit_id">ca-app-pub-3941279894802307/1577596666</string>-->
+    <!--test banner id-->
+    <!--    <string name="admob_ad_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>-->
+    <!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>-->
+
 
 </resources>
