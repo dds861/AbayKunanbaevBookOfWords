@@ -1,0 +1,9 @@
+apply plugin: 'kotlin'
+
+dependencies {
+
+    api domainDependencies.emaCore
+
+    //Kotlin
+    implementation dataDependencies.kotlin
+}
