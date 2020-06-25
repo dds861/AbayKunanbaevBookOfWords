@@ -18,4 +18,5 @@ fun appDataInjection() = Kodein.Module(name = "AppDataModule") {
     bind<LocalStorageRepository>() with singleton { RoomLocalStorageRepository(instance()) }
 
     bind<ResourceManager>() with singleton { AndroidResourceManager(instance()) }
+
 }

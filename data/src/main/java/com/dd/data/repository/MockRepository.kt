@@ -1,10 +1,7 @@
 package com.dd.data.repository
 
 
-import com.dd.domain.model.RequestMakalModel
-import com.dd.domain.model.ResponseMakalModel
-import com.dd.domain.model.RequestCategoryModel
-import com.dd.domain.model.ResponseCategoryModel
+import com.dd.domain.model.*
 import com.dd.domain.repository.Repository
 import kotlinx.coroutines.delay
 import javax.security.auth.login.LoginException
@@ -23,5 +20,9 @@ class MockRepository : Repository {
         return ResponseMakalModel(
                 result = "AnyText"
         )
+    }
+
+    override suspend fun getSelectLanguage(requestSelectLanguageModel: RequestSelectLanguageModel): ResponseSelectLanguageModel {
+        return ResponseSelectLanguageModel()
     }
 }

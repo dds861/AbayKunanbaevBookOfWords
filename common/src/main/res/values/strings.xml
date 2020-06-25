@@ -14,13 +14,11 @@
     <string name="application_name">ЦОНы Справочник</string>
     <string name="hint_search">Поиск</string>
     <!--real banner id-->
-        <string name="admob_ad_app_id" translatable="false">ca-app-pub-3941279894802307~8087898964</string>
-        <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3941279894802307/1793953353</string>
-        <string name="interstitial_ad_unit_id">ca-app-pub-3941279894802307/1577596666</string>
+
     <!--test banner id-->
-<!--    <string name="admob_ad_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>-->
-<!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
-<!--    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>-->
+    <!--    <string name="admob_ad_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>-->
+    <!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>-->
 
     <string name="share_using">Поделиться</string>
     <string name="TextCopied">Скопировано</string>
