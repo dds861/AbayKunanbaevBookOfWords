@@ -1,0 +1,117 @@
+rootProject.ext {
+
+    //Libraries
+
+    navigationVersion = "2.1.0"
+
+    lifecycleVersion = "2.1.0"
+
+    kodeinVersion = "6.5.1"
+
+    constraintVersion = "1.1.3"
+
+    designVersion = "28.0.0"
+
+    materialVersion = "1.0.0"
+
+    coroutinesVersion = "1.3.0"
+
+    coreVersion = "1.2.0"
+
+    extJUnitVersion = "1.1.0"
+
+    rulesVersion = "1.2.0"
+
+    mockitoVersion = "3.2.4"
+
+    archTesting = "1.1.1"
+
+    espressoVersion = "3.2.0"
+
+    appcompat = "1.0.0"
+
+    firebase_appindexing = "16.0.2"
+
+    sqliteassethelper = "2.0.1"
+
+    cardview = "1.0.0"
+
+    easing = "2.0@aar"
+
+    androidanimations = "2.3@aar"
+
+    firebase_analytics = "17.3.0"
+
+    firebase_ads = "19.0.1"
+
+    recyclerview = "1.0.0"
+
+    retrofit = "2.8.1"
+
+    converter_gson = "2.1.0"
+
+    roomVersion = '2.2.3'
+
+    sqlcipherVersion = "4.3.0"
+
+    androidxSqliteVersion = "2.0.1"
+
+    play_services = "19.1.0"
+
+
+    ema = [
+            buildTools            : "28.0.3",
+            minSdk                : 21,
+            compileSdk            : 29,
+            targetSdk             : 29,
+            versionCode           : 7,
+            versionName           : "2.3.0",
+            versionNameApplication: "2.2.1"
+    ]
+
+    appDependencies = [
+            ema                 : "com.github.carlosmateo89.Ema:ema-android:" + ema.versionName,
+            emaCore             : "com.github.carlosmateo89.Ema:ema-core:" + ema.versionName,
+            kotlin              : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:" + project.kotlin_version,
+            coroutines          : 'org.jetbrains.kotlinx:kotlinx-coroutines-android:' + project.coroutinesVersion,
+
+            appcompat           : "androidx.appcompat:appcompat:" + project.appcompat,
+            firebase_appindexing: "com.google.firebase:firebase-appindexing:" + project.firebase_appindexing,
+            sqliteassethelper   : "com.readystatesoftware.sqliteasset:sqliteassethelper:" + project.sqliteassethelper,
+            cardview            : "androidx.cardview:cardview:" + project.cardview,
+
+            //https://github.com/daimajia/AndroidViewAnimations библиотека анимации
+            easing              : "com.daimajia.easing:library:" + project.easing,
+            androidanimations   : "com.daimajia.androidanimations:library:" + project.androidanimations,
+            firebase_analytics  : "com.google.firebase:firebase-analytics:" + project.firebase_analytics,
+            firebase_ads        : "com.google.firebase:firebase-ads:" + project.firebase_ads,
+            recyclerview        : "androidx.recyclerview:recyclerview:" + project.recyclerview,
+            play_services       : "com.google.android.gms:play-services-ads:" + project.play_services
+    ]
+
+
+    dataDependencies = [
+            kotlin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:" + project.kotlin_version,
+            coroutines    : 'org.jetbrains.kotlinx:kotlinx-coroutines-android:' + project.coroutinesVersion,
+            retrofit      : 'com.squareup.retrofit2:retrofit:' + project.retrofit,
+            converter_gson: 'com.squareup.retrofit2:converter-gson:' + project.converter_gson,
+            room          : "androidx.room:room-runtime:" + project.roomVersion,
+            roomKt        : "androidx.room:room-ktx:" + project.roomVersion,
+            roomCompiler  : "androidx.room:room-compiler:" + project.roomVersion,
+            sqlcipher     : "net.zetetic:android-database-sqlcipher:" + project.sqlcipherVersion,
+            androidxSqlite: "androidx.sqlite:sqlite:" + project.androidxSqliteVersion
+    ]
+
+    domainDependencies = [
+            emaCore: "com.github.carlosmateo89.Ema:ema-core:" + ema.versionName,
+            kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:" + project.kotlin_version,
+    ]
+
+    commonDependencies = [
+    ]
+
+    injectionDependencies = [
+            kodein       : "org.kodein.di:kodein-di-generic-jvm:" + project.kodeinVersion,
+            kodeinAndroid: "org.kodein.di:kodein-di-framework-android-x:" + project.kodeinVersion,
+    ]
+}

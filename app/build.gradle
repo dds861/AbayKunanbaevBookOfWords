@@ -1,21 +1,18 @@
 apply plugin: 'com.android.application'
-
-def apikeyPropertiesFile = rootProject.file("apikey.properties")
-def apikeyProperties = new Properties()
-apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
     defaultConfig {
-        applicationId "com.injuryrecovery.hi.abaykunanbaevblackwords"
-        minSdkVersion 15
-        targetSdkVersion 29
-        versionCode 9
-        versionName "1.5"
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-        vectorDrawables.useSupportLibrary = true
+        applicationId 'com.dd.conqazaqstan'
+        minSdkVersion ema.minSdk
+        compileSdkVersion ema.compileSdk
+        targetSdkVersion ema.targetSdk
+        versionCode ema.versionCode
+        versionName ema.versionNameApplication
 
-        buildConfigField("String", "CONSUMER_KEY", apikeyProperties['CONSUMER_KEY'])
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -23,44 +20,61 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-        kotlinOptions {
-            jvmTarget = "1.8"
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    flavorDimensions 'environment'
+
+    productFlavors {
+        mock {
+            dimension 'environment'
         }
+
+        pro {
+            dimension 'environment'
+        }
+
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.google.firebase:firebase-core:16.0.1'
-    implementation 'com.google.firebase:firebase-ads:15.0.1'
-    implementation 'com.google.firebase:firebase-appindexing:16.0.1'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+//    implementation project(path: ':domain')
+//    implementation project(path: ':common')
+//    implementation project(path: ':injection')
+//    implementation project(path: ':data')
+
+    api appDependencies.ema
+    api appDependencies.emaCore
+    api appDependencies.kotlin
+    api appDependencies.coroutines
+
+    api appDependencies.appcompat
+    api appDependencies.firebase_appindexing
+    api appDependencies.sqliteassethelper
+    api appDependencies.cardview
+    api appDependencies.easing
+    api appDependencies.androidanimations
+    api appDependencies.firebase_analytics
+    api appDependencies.firebase_ads
+    api appDependencies.recyclerview
+    api appDependencies.play_services
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.navigation:navigation-fragment:2.2.2'
-    implementation 'androidx.navigation:navigation-ui:2.2.2'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.vectordrawable:vectordrawable:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
-    implementation files('libs/YouTubeAndroidPlayerApi.jar')
 }
 
 
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'kotlin-android'
+//apply plugin: 'com.google.gms.google-services'
