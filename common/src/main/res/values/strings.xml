@@ -2,7 +2,14 @@
 
     <!--HOME-->
     <string name="home_loading_title">Loading…</string>
-    <string name="home_toolbar_title">Справочник ЦОНов Казахстана</string>
+    <string name="home_toolbar_title">Abai Qunanbayuly “Book of words”</string>
+
+    <string name="kazakhBlackWordsTitle" translatable="false">Абайдың қара сөздері</string>
+    <string name="russianBlackWordsTitle" translatable="false">“Слова Назидания” Абай Кунанбаев</string>
+    <string name="englishBlackWordsTitle" translatable="false">“Book of words” Abai Qunanbayuly</string>
+    <string name="portugueseBlackWordsTitle" translatable="false">“O livro das palavras” Abai Qunanbayuly</string>
+    <string name="dutchBlackWordsTitle" translatable="false">“Boek van Overdenkingen” Abai Koenanbajev</string>
+
 
     <!--DIALOG-->
     <string name="dialog_yes">Yes</string>
