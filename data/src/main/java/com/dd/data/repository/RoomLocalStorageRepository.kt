@@ -5,12 +5,9 @@ import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.dd.data.BuildConfig
-import com.dd.data.db.MakalDatabase
+import com.dd.data.db.BlackWordsDatabase
 import com.dd.data.db.entities.toDomainModel
-import com.dd.domain.model.RequestCategoryModel
-import com.dd.domain.model.RequestMakalModel
-import com.dd.domain.model.ResponseCategoryModel
-import com.dd.domain.model.ResponseMakalModel
+import com.dd.domain.model.*
 import com.dd.domain.repository.LocalStorageRepository
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SQLiteException
@@ -24,12 +21,12 @@ class RoomLocalStorageRepository(
     private val dbSecretKey = BuildConfig.DB_SECRET_KEY
     private val passphrase: ByteArray = SQLiteDatabase.getBytes(dbSecretKey.toCharArray())
     private val factory = SupportFactory(passphrase)
-    val db: MakalDatabase by lazy {
+    val db: BlackWordsDatabase by lazy {
         val build = Room.databaseBuilder(
                 context.applicationContext,
-                MakalDatabase::class.java,
+                BlackWordsDatabase::class.java,
                 BuildConfig.DB_NAME)
-        build.createFromAsset("database/quotes.db")
+        build.createFromAsset("database/abay.db")
 //        build.fallbackToDestructiveMigration()
         build.addMigrations(MIGRATION_1_2)
         build.fallbackToDestructiveMigration()
@@ -70,23 +67,68 @@ class RoomLocalStorageRepository(
         }
     }
 
-    override fun getAllCategories(request: RequestCategoryModel): ResponseCategoryModel {
-        return db.categoryDao().getAllCategories().toDomainModel()
+
+    override fun getAllLanguages(request: RequestSelectLanguageModel): ResponseSelectLanguageModel {
+        return db.languagesDao().getAllLanguages().toDomainModel()
     }
 
-    override fun getAllMakals(request: RequestMakalModel): ResponseMakalModel {
-        return db.makalDao().getAllMakals().toDomainModel()
+
+    override suspend fun getGetTitleBlackWords(model: RequestTitleBlackWordsModel): ResponseTitleBlackWordsModel {
+        return when (model.language) {
+            LanguageName.ENGLISH -> ResponseTitleBlackWordsModel(
+                    list = db.englishDao().getEnglish().map {
+                        TitleBlackWordModel(
+                                position = it.id,
+                                numerical = it.title,
+                                text = it.text)
+                    })
+
+            LanguageName.DUTCH -> ResponseTitleBlackWordsModel(
+                    list = db.dutchDao().getDutch().map {
+                        TitleBlackWordModel(
+                                position = it.id,
+                                numerical = it.title,
+                                text = it.text)
+                    }
+            )
+
+            LanguageName.PORTUGUESE -> ResponseTitleBlackWordsModel(
+                    list = db.portugueseDao().getPortuguese().map {
+                        TitleBlackWordModel(
+                                position = it.id,
+                                numerical = it.title,
+                                text = it.text)
+                    }
+            )
+
+            LanguageName.RUSSIAN -> ResponseTitleBlackWordsModel(
+                    list = db.russianDao().getRussian().map {
+                        TitleBlackWordModel(
+                                position = it.id,
+                                numerical = it.title,
+                                text = it.text)
+                    }
+            )
+
+            else -> ResponseTitleBlackWordsModel(
+                    list = db.kazakhDao().getKazakh().map {
+                        TitleBlackWordModel(
+                                position = it.id,
+                                numerical = it.title,
+                                text = it.text)
+                    }
+            )
+        }
     }
 
-    override fun getMakalsByCategoryId(request: RequestMakalModel): ResponseMakalModel {
-        return db.makalDao().getMakalsByCategoryId(request.categoryId).toDomainModel()
-    }
+    override suspend fun getBlackWord(model: RequestBlackWordModel): ResponseBlackWordModel {
+        return when (model.languageName) {
+            LanguageName.ENGLISH -> ResponseBlackWordModel(blackWord = db.englishDao().getEnglishById(model.position).text)
+            LanguageName.DUTCH -> ResponseBlackWordModel(blackWord = db.dutchDao().getDutchById(model.position).text)
+            LanguageName.PORTUGUESE -> ResponseBlackWordModel(blackWord = db.portugueseDao().getPortugueseById(model.position).text)
+            LanguageName.RUSSIAN -> ResponseBlackWordModel(blackWord = db.russianDao().getRussianById(model.position).text)
+            else -> ResponseBlackWordModel(blackWord = db.kazakhDao().getKazakhById(model.position).text)
+        }
 
-    override fun getMakalsByQueryText(request: RequestMakalModel): ResponseMakalModel {
-        return db.makalDao().getMakalsByQueryText(request.queryText).toDomainModel()
-    }
-
-    override fun getRandomMakal(): ResponseMakalModel {
-        return db.makalDao().getRandomMakal().toDomainModel()
     }
 }

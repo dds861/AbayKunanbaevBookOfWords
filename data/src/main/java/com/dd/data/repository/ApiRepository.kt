@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class ApiLdaRepository() : Repository {
+class ApiRepository() : Repository {
 
     private lateinit var api: API
 
