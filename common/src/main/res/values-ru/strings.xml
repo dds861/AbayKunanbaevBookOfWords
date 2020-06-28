@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="home_toolbar_title">Абай Кунанбаев \"Слова Назидания\"</string>
+    <string name="app_name">Абай Кунанбаев “Слова Назидания”</string>
+    <string name="main_text">Абай Кунанбаев\n“Слова Назидания”</string>
 </resources>

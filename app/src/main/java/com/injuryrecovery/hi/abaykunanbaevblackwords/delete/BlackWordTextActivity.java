@@ -13,6 +13,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.injuryrecovery.hi.abaykunanbaevblackwords.DatabaseAccess;
 import com.injuryrecovery.hi.abaykunanbaevblackwords.R;
+import com.injuryrecovery.hi.abaykunanbaevblackwords.ui.blackword.PlayerConfig;
 
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class BlackWordTextActivity extends YouTubeBaseActivity {
     }
 
     private void setYoutubeVideo(final int position, String language) {
-        final YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player);
+        final YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_fragment);
 
         if(language.equals(getResources().getString(R.string.kazakhBlackWordsTitle))){youTubePlayerView.setVisibility(View.VISIBLE);}
 

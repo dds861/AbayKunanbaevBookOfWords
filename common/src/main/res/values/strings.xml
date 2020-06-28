@@ -1,7 +1,7 @@
 <resources>
 
     <!--HOME-->
-    <string name="home_loading_title">Loading…</string>
+    <string name="home_loading_title" translatable="false">Loading…</string>
     <string name="home_toolbar_title">Abai Qunanbayuly “Book of words”</string>
 
     <string name="kazakhBlackWordsTitle" translatable="false">Абайдың қара сөздері</string>
@@ -10,16 +10,28 @@
     <string name="portugueseBlackWordsTitle" translatable="false">“O livro das palavras” Abai Qunanbayuly</string>
     <string name="dutchBlackWordsTitle" translatable="false">“Boek van Overdenkingen” Abai Koenanbajev</string>
 
+    <string name="app_name">Abai Qunanbayuly “Book of words”</string>
+    <string name="main_text">Abai Qunanbayuly\n“Book of words”</string>
+    <string name="title_kazakh" translatable="false">Қазақша</string>
+    <string name="title_russian" translatable="false">На Русском</string>
+    <string name="title_english" translatable="false">English</string>
+    <string name="title_portuguese" translatable="false">Portugues</string>
+    <string name="legal_text" translatable="false">©Copyright 2020\nEmbaixada da República do Cazaquistão no Brasil</string>
 
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3941279894802307/5085621325</string>
+
+
+    <string name="app_name_kazakh" translatable="false">Абайдың қара сөздері</string>
+    <string name="app_name_russian" translatable="false">Абай Кунанбаев \"Слова Назидания\"</string>
+    <string name="app_name_english" translatable="false">Abai Qunanbayuly “Book of words”</string>
+    <string name="app_name_portuguese" translatable="false">Abai Qunanbayuly “O Livro das Palavras”</string>
     <!--DIALOG-->
-    <string name="dialog_yes">Yes</string>
-    <string name="dialog_accept">Accept</string>
-    <string name="dialog_no">No</string>
+
+    <string name="dialog_yes" translatable="false">Yes</string>
+    <string name="dialog_accept" translatable="false">Accept</string>
+    <string name="dialog_no" translatable="false">No</string>
 
 
-    <string name="app_name">ЦОНы Справочник</string>
-    <string name="application_name">ЦОНы Справочник</string>
-    <string name="hint_search">Поиск</string>
     <!--real banner id-->
 
     <!--test banner id-->
@@ -27,23 +39,6 @@
     <!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
     <!--    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>-->
 
-    <string name="share_using">Поделиться</string>
-    <string name="TextCopied">Скопировано</string>
-    <string name="app_label">label</string>
-    <string name="search_hint">Фильтр</string>
-    <string name="search_title">Поиск</string>
-    <string name="appwidget_text">ЦОНы Справочник</string>
-    <string name="add_widget">Add widget</string>
 
-    <string name="title_activity_main3">Main3Activity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Daniyar Nurgaliyev Apps</string>
-    <string name="nav_header_subtitle_email">adeveloper861@gmail.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="telegramPackage">org.telegram.messenger</string>
-    <string name="telegramDirectLink">tg://resolve?domain=maqal1</string>
-    <string name="telegramWebLink">https://t.me/maqal1</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.injuryrecovery.hi.abaykunanbaevblackwords.ui.main
 
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.View
 import android.widget.EditText
 import com.carmabs.ema.android.extra.EmaReceiverModel
@@ -8,11 +9,11 @@ import com.carmabs.ema.android.extra.EmaResultModel
 import com.carmabs.ema.android.ui.EmaView
 import com.carmabs.ema.core.constants.FLOAT_ZERO
 import com.carmabs.ema.core.state.EmaExtraData
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.*
 import com.injuryrecovery.hi.abaykunanbaevblackwords.R
 import com.injuryrecovery.hi.abaykunanbaevblackwords.base.BaseActivity
 import com.injuryrecovery.hi.abaykunanbaevblackwords.model.ToolbarModel
+import kotlinx.android.synthetic.main.item_banner_ad_container.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.kodein.di.generic.instance
 
@@ -33,20 +34,20 @@ class MainToolbarsViewActivity : BaseActivity(), EmaView<HomeToolbarState, MainT
     lateinit var etSearch: EditText
     private lateinit var adView: AdView
     private lateinit var mInterstitialAd: InterstitialAd
-//    private val adSize: AdSize
-//        get() {
-//            //code from official Google Admobs
-//            val display = windowManager.defaultDisplay
-//            val outMetrics = DisplayMetrics()
-//            display.getMetrics(outMetrics)
-//            val density = outMetrics.density
-//            var adWidthPixels = avAdvertising.width.toFloat()
-//            if (adWidthPixels == 0f) {
-//                adWidthPixels = outMetrics.widthPixels.toFloat()
-//            }
-//            val adWidth = (adWidthPixels / density).toInt()
-//            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth)
-//        }
+    private val adSize: AdSize
+        get() {
+            //code from official Google Admobs
+            val display = windowManager.defaultDisplay
+            val outMetrics = DisplayMetrics()
+            display.getMetrics(outMetrics)
+            val density = outMetrics.density
+            var adWidthPixels = avAdvertising.width.toFloat()
+            if (adWidthPixels == 0f) {
+                adWidthPixels = outMetrics.widthPixels.toFloat()
+            }
+            val adWidth = (adWidthPixels / density).toInt()
+            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth)
+        }
 
     /**
      * Default functions
@@ -55,7 +56,7 @@ class MainToolbarsViewActivity : BaseActivity(), EmaView<HomeToolbarState, MainT
         super.onCreate(savedInstanceState)
         initializeViewModel(this)
 
-//        setupMobileAds()
+        setupMobileAds()
     }
 
     override fun onResultReceiverInvokeEvent(emaReceiverModel: EmaReceiverModel) {
@@ -83,16 +84,6 @@ class MainToolbarsViewActivity : BaseActivity(), EmaView<HomeToolbarState, MainT
     }
 
     override fun onStateNormal(data: HomeToolbarState) {
-//        when (data.step) {
-//            HomeToolbarState.HomeToolbarStateStep.UPDATE_TOOLBAR -> {
-//                updateToolbar(data.toolbarModel)
-//            }
-//
-//            HomeToolbarState.HomeToolbarStateStep.SHOW_INTERSTITIAL -> {
-//                showInterstitial()
-//            }
-//        }
-
         if (checkToolbarVisibility(data)) {
             updateToolbar(data.toolbarModel)
         }
@@ -139,36 +130,25 @@ class MainToolbarsViewActivity : BaseActivity(), EmaView<HomeToolbarState, MainT
         }
     }
 
-//    private fun setupMobileAds() {
-//        // Initialize the Mobile Ads SDK.
-//        MobileAds.initialize(this)
-//
-//        adView = AdView(this)
-//        avAdvertising.addView(adView)
-//        loadBanner()
-//
-//        mInterstitialAd = InterstitialAd(this)
-//        mInterstitialAd.adUnitId = resources.getString(R.string.interstitial_ad_unit_id)
-//        mInterstitialAd.loadAd(AdRequest.Builder().build())
-//
-//        mInterstitialAd.adListener = object : AdListener() {
-//            override fun onAdClosed() {
-//                mInterstitialAd.loadAd(AdRequest.Builder().build())
-//                etSearch.clearFocus()
-//            }
-//        }
-//    }
-//
-//
-//    private fun loadBanner() {
-//        adView.adUnitId = resources.getString(R.string.banner_ad_unit_id)
-//
-//        adView.adSize = adSize
-//        val adRequest = AdRequest
-//                .Builder()
-//                .build()
-//        adView.loadAd(adRequest)
-//    }
+    private fun setupMobileAds() {
+        // Initialize the Mobile Ads SDK.
+        MobileAds.initialize(this)
+
+        adView = AdView(this)
+        avAdvertising.addView(adView)
+        loadBanner()
+
+    }
+
+    private fun loadBanner() {
+        adView.adUnitId = resources.getString(R.string.banner_ad_unit_id)
+
+        adView.adSize = adSize
+        val adRequest = AdRequest
+                .Builder()
+                .build()
+        adView.loadAd(adRequest)
+    }
 
 
 }

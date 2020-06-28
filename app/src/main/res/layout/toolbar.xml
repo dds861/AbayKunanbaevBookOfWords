@@ -71,7 +71,7 @@
             android:textColor="@color/primary_light"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/ivToolbarSearch"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Title"
@@ -79,19 +79,6 @@
 
 
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/ivToolbarSearch"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:paddingTop="@dimen/icon_padding_top"
-            android:paddingBottom="@dimen/icon_padding_bottom"
-            android:scaleType="fitCenter"
-            android:src="@drawable/background_image2"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

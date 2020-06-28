@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="home_toolbar_title">Abai Qunanbayuly “O livro das palavras”</string>
+    <string name="app_name">Abai Qunanbayuly “O livro das palavras”</string>
+    <string name="main_text">Abai Qunanbayuly\n“O livro das palavras”</string>
 </resources>

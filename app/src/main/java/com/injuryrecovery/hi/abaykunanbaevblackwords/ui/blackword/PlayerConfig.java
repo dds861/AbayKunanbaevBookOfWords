@@ -1,4 +1,5 @@
-package com.injuryrecovery.hi.abaykunanbaevblackwords.delete;
+package com.injuryrecovery.hi.abaykunanbaevblackwords.ui.blackword;
+
 
 import com.injuryrecovery.hi.abaykunanbaevblackwords.BuildConfig;
 
