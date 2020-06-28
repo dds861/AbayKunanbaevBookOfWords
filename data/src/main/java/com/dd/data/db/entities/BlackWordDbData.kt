@@ -5,8 +5,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName = MakalDbData.TABLE_NAME)
-data class MakalDbData(
+@Entity(tableName = BlackWordDbData.TABLE_NAME)
+data class BlackWordDbData(
 
         @PrimaryKey
         @ColumnInfo(name = ID) val id: Long,
