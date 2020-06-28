@@ -3,21 +3,17 @@ package com.injuryrecovery.hi.abaykunanbaevblackwords.model
 import com.carmabs.ema.core.constants.STRING_EMPTY
 
 data class ToolbarModel(
-        val telegramButton: TelegramButton? = null,
-        val searchButton: SearchButton? = null,
-        val toolbarTitle: String = STRING_EMPTY,
-        val toolbarTitleVisibility: Boolean = true,
-        val toolbarLogoOrBackVisibility: Boolean = true,
-        val toolbarVisibility: Boolean = true,
-        val toolbarElevation: Boolean = false
-) {
-    data class SearchButton(
-            val visibility: Boolean = true,
-            val searchViewText: String = STRING_EMPTY,
-            val setOnQueryTextFocusChangeListener: ((queryText: String) -> Unit)? = null
-    )
+        val shareButton: ShareButton? = null,
+        val title: String = STRING_EMPTY,
+        val titleVisibility: Boolean = true,
+        val logoOrBackVisibility: Boolean = true,
+        val visibility: Boolean = true,
+        val elevation: Boolean = false,
+        val gone: Boolean = true,
+        val backClickListener: (() -> Unit)? = null,
+        val backVisibility: Boolean = false
+)
 
-    data class TelegramButton(
-            val visibility: Boolean = true
-    )
-}
+data class ShareButton(
+        val visibility: Boolean = true
+)

@@ -1,15 +1,20 @@
 package com.injuryrecovery.hi.abaykunanbaevblackwords.ui.main
 
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import com.carmabs.ema.android.extra.EmaReceiverModel
 import com.carmabs.ema.android.extra.EmaResultModel
 import com.carmabs.ema.android.ui.EmaView
+import com.carmabs.ema.core.constants.FLOAT_ZERO
 import com.carmabs.ema.core.state.EmaExtraData
-import com.google.android.gms.ads.*
-import com.injuryrecovery.hi.abaykunanbaevblackwords.base.BaseActivity
-import org.kodein.di.generic.instance
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.InterstitialAd
 import com.injuryrecovery.hi.abaykunanbaevblackwords.R
+import com.injuryrecovery.hi.abaykunanbaevblackwords.base.BaseActivity
+import com.injuryrecovery.hi.abaykunanbaevblackwords.model.ToolbarModel
+import kotlinx.android.synthetic.main.toolbar.*
+import org.kodein.di.generic.instance
 
 class MainToolbarsViewActivity : BaseActivity(), EmaView<HomeToolbarState, MainToolbarsViewModel, HomeNavigator.Navigation> {
     /**
@@ -87,11 +92,53 @@ class MainToolbarsViewActivity : BaseActivity(), EmaView<HomeToolbarState, MainT
 //                showInterstitial()
 //            }
 //        }
+
+        if (checkToolbarVisibility(data)) {
+            updateToolbar(data.toolbarModel)
+        }
     }
 
     /**
      * Customs functions
      */
+
+
+    private fun checkToolbarVisibility(data: HomeToolbarState): Boolean {
+        val visibility = data.toolbarModel.visibility
+        val gone = data.toolbarModel.gone
+
+        if (visibility)
+            showToolbar()
+        else
+            hideToolbar(gone)
+
+        return visibility
+    }
+
+    private fun updateToolbar(data: ToolbarModel) {
+        val title = data.title
+        val backVisibility = if (data.backVisibility) View.VISIBLE else View.INVISIBLE
+        if (title.isEmpty()) {
+            tvToolbarTitle.visibility = View.GONE
+            ivLogo.visibility = View.VISIBLE
+
+        } else {
+            ivLogo.visibility = View.GONE
+            tvToolbarTitle.visibility = View.VISIBLE
+        }
+
+        toolbarLayout.elevation = FLOAT_ZERO
+
+        tvToolbarTitle.text = title
+        ivToolbarBack.visibility = backVisibility
+
+
+
+        data.backClickListener?.let { listener ->
+            ivToolbarBack.setOnClickListener { listener.invoke() }
+        }
+    }
+
 //    private fun setupMobileAds() {
 //        // Initialize the Mobile Ads SDK.
 //        MobileAds.initialize(this)

@@ -17,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.injuryrecovery.hi.abaykunanbaevblackwords.delete.BlackWordTextActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,10 +45,10 @@ public class BlackWordNumsActivity extends AppCompatActivity {
         setSupportActionBar(mActionBarToolbar);
         getSupportActionBar().setTitle(getResources().getString(R.string.app_name_kazakh));
 
-        kazakh = getResources().getString(R.string.kazakh);
-        russian = getResources().getString(R.string.russian);
-        english = getResources().getString(R.string.english);
-        portuguese = getResources().getString(R.string.portuguese);
+        kazakh = getResources().getString(R.string.kazakhBlackWordsTitle);
+        russian = getResources().getString(R.string.russianBlackWordsTitle);
+        english = getResources().getString(R.string.englishBlackWordsTitle);
+        portuguese = getResources().getString(R.string.portugueseBlackWordsTitle);
 
         //реклама
         AdView mAdView = findViewById(R.id.adView);
