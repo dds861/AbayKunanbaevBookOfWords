@@ -20,7 +20,7 @@
         android:layout_below="@id/youtube_player">
 
         <TextView
-            android:id="@+id/tvText"
+            android:id="@+id/tvBlackWord"
             style="@style/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

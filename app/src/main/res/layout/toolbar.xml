@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ivToolbarLogoOrBack"
+            android:id="@+id/ivLogo"
             android:layout_width="60dp"
             android:layout_height="0dp"
             android:paddingTop="@dimen/icon_padding_top"
@@ -48,11 +48,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/ivToolbarBack"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:paddingTop="@dimen/icon_padding_top"
+            android:paddingBottom="@dimen/icon_padding_bottom"
+            android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tvToolbarTitle"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="68dp"
             android:ellipsize="end"
             android:gravity="start|center"
             android:maxLines="1"
@@ -61,7 +72,7 @@
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ivToolbarSearch"
-            app:layout_constraintStart_toEndOf="@id/ivToolbarLogoOrBack"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Title"
             tools:visibility="visible" />
