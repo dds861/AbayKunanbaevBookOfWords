@@ -6,7 +6,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_image"
     tools:context="com.injuryrecovery.hi.abaykunanbaevblackwords.BlackWordNumsActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -27,7 +26,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="8dp"
-        android:text="@string/legal_text"
+        android:text="@string/portugueseLegalText"
         android:visibility="gone"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"

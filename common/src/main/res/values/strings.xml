@@ -16,7 +16,8 @@
     <string name="title_russian" translatable="false">На Русском</string>
     <string name="title_english" translatable="false">English</string>
     <string name="title_portuguese" translatable="false">Portugues</string>
-    <string name="legal_text" translatable="false">©Copyright 2020\nEmbaixada da República do Cazaquistão no Brasil</string>
+    <string name="portugueseLegalText" translatable="false">©Copyright 2020\nEmbaixada da República do Cazaquistão no Brasil</string>
+    <string name="dutchLegalText" translatable="false">©Copyright 2020\nAmbassade van de Republiek Kazachstan in Nederland</string>
 
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3941279894802307/5085621325</string>
 

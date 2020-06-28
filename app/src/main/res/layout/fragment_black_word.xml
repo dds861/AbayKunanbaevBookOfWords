@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
-        android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
-        android:id="@+id/youtubesupportfragment"
+    <TextView
+        android:id="@+id/tvLegalText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/dutchLegalText"
+        android:visibility="visible"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toTopOf="parent" />
@@ -17,20 +19,21 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@id/youtubesupportfragment">
+        ads:layout_constraintTop_toBottomOf="@id/tvLegalText">
 
         <TextView
             android:id="@+id/tvBlackWord"
             style="@style/text"
-            android:text="sorry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:paddingTop="16dp"
-            android:paddingBottom="16dp" />
+            android:paddingBottom="16dp"
+            android:text="sorry" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
