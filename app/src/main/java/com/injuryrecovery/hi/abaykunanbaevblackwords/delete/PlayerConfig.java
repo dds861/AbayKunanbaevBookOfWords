@@ -1,4 +1,6 @@
-package com.injuryrecovery.hi.abaykunanbaevblackwords;
+package com.injuryrecovery.hi.abaykunanbaevblackwords.delete;
+
+import com.injuryrecovery.hi.abaykunanbaevblackwords.BuildConfig;
 
 public class PlayerConfig {
     public PlayerConfig() {

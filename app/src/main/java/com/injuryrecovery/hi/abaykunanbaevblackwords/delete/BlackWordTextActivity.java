@@ -1,4 +1,4 @@
-package com.injuryrecovery.hi.abaykunanbaevblackwords;
+package com.injuryrecovery.hi.abaykunanbaevblackwords.delete;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.injuryrecovery.hi.abaykunanbaevblackwords.DatabaseAccess;
+import com.injuryrecovery.hi.abaykunanbaevblackwords.R;
 
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class BlackWordTextActivity extends YouTubeBaseActivity {
 
         List<String> list_qazaqsha_counter = databaseAccess.getTextBlackWords(language);
         databaseAccess.close();
-        TextView mTvText = findViewById(R.id.tvText);
+        TextView mTvText = findViewById(R.id.tvBlackWord);
 
         String s1 = list_qazaqsha_counter.get(position);
         s1 = s1.replaceAll("\\\\n", "\n");
@@ -51,7 +53,7 @@ public class BlackWordTextActivity extends YouTubeBaseActivity {
     private void setYoutubeVideo(final int position, String language) {
         final YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player);
 
-        if(language.equals(getResources().getString(R.string.kazakh))){youTubePlayerView.setVisibility(View.VISIBLE);}
+        if(language.equals(getResources().getString(R.string.kazakhBlackWordsTitle))){youTubePlayerView.setVisibility(View.VISIBLE);}
 
         final String[] mYoutubeLinks = getResources().getStringArray(R.array.youtube_links);
 
