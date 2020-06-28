@@ -5,6 +5,32 @@
     app:startDestination="@id/selectLanguageViewFragment">
     <fragment
         android:id="@+id/selectLanguageViewFragment"
-        android:name="com.injuryrecovery.hi.abaykunanbaevblackwords.ui.languages.SelectLanguageViewFragment"
-        android:label="SelectLanguageViewFragment" />
+        android:name="com.injuryrecovery.hi.abaykunanbaevblackwords.ui.languages.LanguageViewFragment"
+        android:label="SelectLanguageViewFragment">
+        <action
+            android:id="@+id/action_selectLanguageViewFragment_to_checklistViewFragment"
+            app:destination="@id/checklistViewFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/checklistViewFragment"
+        android:name="com.injuryrecovery.hi.abaykunanbaevblackwords.ui.checklist.ChecklistViewFragment"
+        android:label="ChecklistViewFragment">
+        <action
+            android:id="@+id/action_checklistViewFragment_to_blackWordViewFragment"
+            app:destination="@id/blackWordViewFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/blackWordViewFragment"
+        android:name="com.injuryrecovery.hi.abaykunanbaevblackwords.ui.blackword.BlackWordViewFragment"
+        android:label="BlackWordViewFragment" />
 </navigation>
