@@ -3,6 +3,8 @@ package com.injuryrecovery.hi.abaykunanbaevblackwords.injection
 import android.app.Activity
 import androidx.navigation.NavController
 import com.carmabs.ema.android.ui.EmaFragmentActivity
+import com.injuryrecovery.hi.abaykunanbaevblackwords.ui.checklist.ChecklistNavigator
+import com.injuryrecovery.hi.abaykunanbaevblackwords.ui.languages.LanguageNavigator
 import com.injuryrecovery.hi.abaykunanbaevblackwords.ui.main.HomeNavigator
 import com.injuryrecovery.hi.abaykunanbaevblackwords.ui.main.MainToolbarsViewModel
 import org.kodein.di.Kodein
@@ -19,5 +21,9 @@ fun activityInjection(activity: Activity) = Kodein.Module(name = "ActivityModule
     bind<MainToolbarsViewModel>() with provider { MainToolbarsViewModel() }
 
     bind<HomeNavigator>() with singleton { HomeNavigator(instance(), instance()) }
+
+    bind<LanguageNavigator>() with singleton { LanguageNavigator(instance(), instance()) }
+
+    bind<ChecklistNavigator>() with singleton { ChecklistNavigator(instance(), instance()) }
 
 }
