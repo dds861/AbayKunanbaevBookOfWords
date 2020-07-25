@@ -14,9 +14,10 @@ import com.dd.data.db.entities.*
             DutchDbData::class,
             KazakhDbData::class,
             RussianDbData::class,
-            PortugueseDbData::class
+            PortugueseDbData::class,
+            ChineseDbData::class
         ],
-        version = 2,
+        version = 3,
         exportSchema = false
 )
 abstract class BlackWordsDatabase : RoomDatabase() {
@@ -27,5 +28,6 @@ abstract class BlackWordsDatabase : RoomDatabase() {
     abstract fun kazakhDao(): KazakhDbDao
     abstract fun russianDao(): RussianDbDao
     abstract fun portugueseDao(): PortugueseDbDao
+    abstract fun chineseDao(): ChineseDbDao
 }
 

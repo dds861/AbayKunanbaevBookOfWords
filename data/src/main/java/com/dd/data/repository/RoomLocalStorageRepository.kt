@@ -109,6 +109,14 @@ class RoomLocalStorageRepository(
                                 text = it.text)
                     }
             )
+            LanguageName.CHINESE -> ResponseTitleBlackWordsModel(
+                    list = db.chineseDao().getChinese().map {
+                        TitleBlackWordModel(
+                                position = it.id,
+                                numerical = it.title,
+                                text = it.text)
+                    }
+            )
 
             else -> ResponseTitleBlackWordsModel(
                     list = db.kazakhDao().getKazakh().map {
@@ -127,6 +135,7 @@ class RoomLocalStorageRepository(
             LanguageName.DUTCH -> ResponseBlackWordModel(blackWord = db.dutchDao().getDutchById(model.position).text)
             LanguageName.PORTUGUESE -> ResponseBlackWordModel(blackWord = db.portugueseDao().getPortugueseById(model.position).text)
             LanguageName.RUSSIAN -> ResponseBlackWordModel(blackWord = db.russianDao().getRussianById(model.position).text)
+            LanguageName.CHINESE -> ResponseBlackWordModel(blackWord = db.chineseDao().getChineseById(model.position).text)
             else -> ResponseBlackWordModel(blackWord = db.kazakhDao().getKazakhById(model.position).text)
         }
 

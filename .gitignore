@@ -13,3 +13,9 @@ app/apikey.properties
 app/release/app-release.aab
 
 .idea/
+
+app/mock/debug/app-mock-debug.aab
+
+app/pro/debug/app-pro-debug.aab
+
+app/pro/release/app-pro-release.aab

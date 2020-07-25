@@ -33,6 +33,7 @@ class ChecklistViewModel(
                 LanguageName.ENGLISH -> resourceManager.getToolbarTitleEnglish()
                 LanguageName.DUTCH -> resourceManager.getToolbarTitleDutch()
                 LanguageName.PORTUGUESE -> resourceManager.getToolbarTitlePortuguese()
+                LanguageName.CHINESE -> resourceManager.getToolbarTitleChinese()
                 else -> resourceManager.getToolbarTitleKazakh()
             }
 
@@ -60,6 +61,7 @@ class ChecklistViewModel(
                             LanguageName.ENGLISH -> getTitleBlackWordsUseCase.execute(RequestTitleBlackWordsModel(language = com.dd.domain.model.LanguageName.ENGLISH))
                             LanguageName.DUTCH -> getTitleBlackWordsUseCase.execute(RequestTitleBlackWordsModel(language = com.dd.domain.model.LanguageName.DUTCH))
                             LanguageName.PORTUGUESE -> getTitleBlackWordsUseCase.execute(RequestTitleBlackWordsModel(language = com.dd.domain.model.LanguageName.PORTUGUESE))
+                            LanguageName.CHINESE -> getTitleBlackWordsUseCase.execute(RequestTitleBlackWordsModel(language = com.dd.domain.model.LanguageName.CHINESE))
                             else -> getTitleBlackWordsUseCase.execute(RequestTitleBlackWordsModel(language = com.dd.domain.model.LanguageName.KAZAKH))
                         }
 
@@ -82,7 +84,6 @@ class ChecklistViewModel(
     }
 
     fun onItemFromListClicked(model: TitleBlackWordModel) {
-        Log.i("autolog", "model.position: " + model.position);
         checkDataState {
             navigate(ChecklistNavigator.Navigation.BlackWord(BlackWordState(
                     position = model.position,

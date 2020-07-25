@@ -12,5 +12,6 @@ enum class LanguageName {
     RUSSIAN,
     ENGLISH,
     DUTCH,
-    PORTUGUESE
+    PORTUGUESE,
+    CHINESE
 }

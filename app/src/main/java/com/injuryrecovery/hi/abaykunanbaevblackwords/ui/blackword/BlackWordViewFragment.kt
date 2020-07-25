@@ -27,7 +27,6 @@ class BlackWordViewFragment
      * Custom variables
      */
     private lateinit var vm: BlackWordViewModel
-    private val RECOVERY_DIALOG_REQUEST = 1
 
     /**
      * Default functions
@@ -45,6 +44,7 @@ class BlackWordViewFragment
         when (data.languageName) {
             LanguageName.PORTUGUESE -> showLegalTextPortuguese()
             LanguageName.DUTCH -> showLegalTextDutch()
+            LanguageName.CHINESE -> showLegalTextChinese()
             else -> hideLegalText()
         }
         tvBlackWord.text = data.blackWord
@@ -66,6 +66,11 @@ class BlackWordViewFragment
 
     private fun showLegalTextDutch() {
         tvLegalText.text = resources.getString(R.string.dutchLegalText)
+        tvLegalText.visibility = View.VISIBLE
+    }
+
+    private fun showLegalTextChinese() {
+        tvLegalText.text = resources.getString(R.string.chineseLegalText)
         tvLegalText.visibility = View.VISIBLE
     }
 

@@ -30,6 +30,7 @@ class BlackWordViewModel(
                 LanguageName.ENGLISH -> resourceManager.getToolbarTitleEnglish()
                 LanguageName.DUTCH -> resourceManager.getToolbarTitleDutch()
                 LanguageName.PORTUGUESE -> resourceManager.getToolbarTitlePortuguese()
+                LanguageName.CHINESE -> resourceManager.getToolbarTitleChinese()
                 else -> resourceManager.getToolbarTitleKazakh()
             }
 
@@ -65,6 +66,9 @@ class BlackWordViewModel(
 
                     LanguageName.PORTUGUESE -> getBlackWordUseCase.execute(RequestBlackWordModel(
                             languageName = com.dd.domain.model.LanguageName.PORTUGUESE,
+                            position = it.position))
+                    LanguageName.CHINESE -> getBlackWordUseCase.execute(RequestBlackWordModel(
+                            languageName = com.dd.domain.model.LanguageName.CHINESE,
                             position = it.position))
 
                     else -> getBlackWordUseCase.execute(RequestBlackWordModel(

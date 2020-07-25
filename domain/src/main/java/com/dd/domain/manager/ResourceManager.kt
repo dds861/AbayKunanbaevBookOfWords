@@ -8,4 +8,5 @@ interface ResourceManager {
     fun getToolbarTitleRussian(): String
     fun getToolbarTitlePortuguese(): String
     fun getToolbarTitleDutch(): String
+    fun getToolbarTitleChinese(): String
 }

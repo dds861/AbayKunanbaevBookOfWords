@@ -14,4 +14,5 @@ class AndroidResourceManager(private val context: Context) : ResourceManager {
     override fun getToolbarTitleRussian(): String = context.resources.getString(R.string.russianBlackWordsTitle)
     override fun getToolbarTitlePortuguese(): String = context.resources.getString(R.string.portugueseBlackWordsTitle)
     override fun getToolbarTitleDutch(): String = context.resources.getString(R.string.dutchBlackWordsTitle)
+    override fun getToolbarTitleChinese(): String = context.resources.getString(R.string.chineseBlackWordsTitle)
 }

@@ -65,6 +65,7 @@ class LanguageViewModel(
             3 -> LanguageName.ENGLISH
             4 -> LanguageName.PORTUGUESE
             5 -> LanguageName.DUTCH
+            6 -> LanguageName.CHINESE
             else -> LanguageName.KAZAKH
         }
     }
