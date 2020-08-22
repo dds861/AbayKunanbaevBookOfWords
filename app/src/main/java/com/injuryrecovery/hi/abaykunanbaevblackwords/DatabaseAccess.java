@@ -91,7 +91,6 @@ public class DatabaseAccess extends AppCompatActivity {
     public String getLanguageByPosition(String position) {
 
         String sqlQueryText = "SELECT text FROM languages WHERE num = " + position;
-        Log.i("autolog", "sqlQueryText: " + sqlQueryText);
         Cursor cursor = database.rawQuery(sqlQueryText, null);
         cursor.moveToFirst();
         List<String> list = new ArrayList<>();

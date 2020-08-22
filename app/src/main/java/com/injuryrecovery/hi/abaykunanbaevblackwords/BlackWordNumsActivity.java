@@ -64,7 +64,6 @@ public class BlackWordNumsActivity extends AppCompatActivity {
         Intent mIntent = getIntent();
         String language = mIntent.getStringExtra("language");
         int position = mIntent.getIntExtra("position", 0);
-        Log.i("autolog", "position: " + position);
 
         String selectedLanguage = getLanguageByPosition(String.valueOf(position+1));
         clickedItems(selectedLanguage);
