@@ -60,13 +60,18 @@ rootProject.ext {
 
 
     ema = [
+            versionName           : "2.3.0",
+            versionNameApplication: "2.2.1"
+    ]
+
+    app = [
             buildTools            : "29.0.2",
             minSdk                : 21,
             compileSdk            : 29,
             targetSdk             : 29,
-            versionCode           : 11,
-            versionName           : "2.3.0",
-            versionNameApplication: "2.2.1"
+            versionCode           : 12,
+            versionName           : "2.4.0",
+            versionNameApplication: "2.4.0"
     ]
 
     appDependencies = [

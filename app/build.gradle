@@ -9,11 +9,11 @@ apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 android {
     defaultConfig {
         applicationId 'com.injuryrecovery.hi.abaykunanbaevblackwords'
-        minSdkVersion ema.minSdk
-        compileSdkVersion ema.compileSdk
-        targetSdkVersion ema.targetSdk
-        versionCode ema.versionCode
-        versionName ema.versionNameApplication
+        minSdkVersion app.minSdk
+        compileSdkVersion app.compileSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionNameApplication
 
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
