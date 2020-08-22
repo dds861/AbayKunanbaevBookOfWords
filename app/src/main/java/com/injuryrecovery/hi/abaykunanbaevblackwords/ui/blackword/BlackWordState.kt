@@ -6,6 +6,7 @@ import com.carmabs.ema.core.state.EmaBaseState
 import com.injuryrecovery.hi.abaykunanbaevblackwords.ui.checklist.LanguageName
 
 data class BlackWordState(
+        val copyClicked: Boolean = false,
         val position: Int = INT_ZERO,
         val languageName: LanguageName = LanguageName.KAZAKH,
         val blackWord: String = STRING_EMPTY

@@ -8,12 +8,10 @@ import com.injuryrecovery.hi.abaykunanbaevblackwords.base.BaseToolbarsViewModel
 import com.injuryrecovery.hi.abaykunanbaevblackwords.ui.checklist.LanguageName
 import com.injuryrecovery.hi.abaykunanbaevblackwords.ui.main.MainToolbarsViewModel
 
-
 class BlackWordViewModel(
         val resourceManager: ResourceManager,
         private val getBlackWordUseCase: GetBlackWordUseCase
 ) : BaseToolbarsViewModel<BlackWordState, BlackWordNavigator.Navigation>() {
-
     override fun onConfigureToolbars(mainToolbarsVm: MainToolbarsViewModel) {
         mainToolbarsVm.onActionUpdateToolbar {
             it.copy(title = getTitle(),
@@ -33,9 +31,7 @@ class BlackWordViewModel(
                 LanguageName.CHINESE -> resourceManager.getToolbarTitleChinese()
                 else -> resourceManager.getToolbarTitleKazakh()
             }
-
         }
-
     }
 
     override val initialViewState: BlackWordState = BlackWordState()
@@ -55,41 +51,46 @@ class BlackWordViewModel(
                     LanguageName.RUSSIAN -> getBlackWordUseCase.execute(RequestBlackWordModel(
                             languageName = com.dd.domain.model.LanguageName.RUSSIAN,
                             position = it.position))
-
                     LanguageName.ENGLISH -> getBlackWordUseCase.execute(RequestBlackWordModel(
                             languageName = com.dd.domain.model.LanguageName.ENGLISH,
                             position = it.position))
-
                     LanguageName.DUTCH -> getBlackWordUseCase.execute(RequestBlackWordModel(
                             languageName = com.dd.domain.model.LanguageName.DUTCH,
                             position = it.position))
-
                     LanguageName.PORTUGUESE -> getBlackWordUseCase.execute(RequestBlackWordModel(
                             languageName = com.dd.domain.model.LanguageName.PORTUGUESE,
                             position = it.position))
                     LanguageName.CHINESE -> getBlackWordUseCase.execute(RequestBlackWordModel(
                             languageName = com.dd.domain.model.LanguageName.CHINESE,
                             position = it.position))
-
                     else -> getBlackWordUseCase.execute(RequestBlackWordModel(
                             languageName = com.dd.domain.model.LanguageName.KAZAKH,
                             position = it.position))
                 }
-
-
                 val blackWord = result.blackWord
                         .replace("\\\\n".toRegex(), "\n")
                         .replace("\\\\t".toRegex(), "\t")
 
                 updateToNormalState {
                     copy(
-                            blackWord = blackWord
+                            languageName = it.languageName,
+                            blackWord = blackWord,
+                            copyClicked = false
                     )
                 }
             }, { e ->
                 updateToErrorState(e)
-                Log.i("autolog", "e: " + e);
             })
+        }
+    }
+
+    fun copyClicked() {
+        checkDataState {
+            updateToNormalState {
+                copy(
+                        copyClicked = true
+                )
+            }
         }
     }
 }
